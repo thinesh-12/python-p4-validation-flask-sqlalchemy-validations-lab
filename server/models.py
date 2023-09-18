@@ -55,23 +55,23 @@ class Post(db.Model):
         return title
     
     @validates("content")
-    def validate_content(self, key, content):
-        if not len(content) >= 250:
+    def validate_content(self, key, cont):
+        if not len(cont) >= 250:
             raise ValueError("Post content must be 250 characters or more")
-        return content
+        return cont
 
     @validates("summary")
-    def validate_summary(self, key, summary):
-        if len(summary) >= 250:
+    def validate_summary(self, key, summ):
+        if len(summ) >= 250:
             raise ValueError("Summary cannot be greater than 250 characters")
-        return summary
+        return summ
 
     @validates("category")
-    def validate_category(self, key, category):
+    def validate_category(self, key, cat):
         cats = ["Fiction", "Non-Fiction"]
-        if category not in cats:
+        if cat not in cats:
             raise ValueError("Category must be Fiction or Non-Fiction")
-        return category 
+        return cat 
 
 
     def __repr__(self):
