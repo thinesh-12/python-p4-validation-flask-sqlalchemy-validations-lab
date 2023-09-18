@@ -1,4 +1,5 @@
 import pytest
+
 from sqlalchemy.exc import IntegrityError, CompileError
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
